@@ -41,7 +41,7 @@ object GameRepositoryImpl: GameRepository {
                 70,
                 60
             )
-            Level.NORMAL -> GameSettings(
+            Level.MEDIUM -> GameSettings(
                 20,
                 20,
                 80,
