@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.GameFinishedFragment">
+
+    <ImageView
+        android:id="@+id/emoji_result"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="48dp"
+        android:contentDescription="@string/game_over"
+        app:layout_constraintBottom_toTopOf="@+id/tv_quantity_of_right_answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@drawable/ic_smile" />
+
+    <TextView
+        android:id="@+id/tv_quantity_of_right_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/quantity_of_answers_u_need"
+        android:textSize="20sp"
+        android:textColor="@color/gray_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/ur_score"
+        android:textSize="20sp"
+        android:textColor="@color/gray_pink"
+        app:layout_constraintTop_toBottomOf="@+id/tv_quantity_of_right_answers" />
+
+    <TextView
+        android:id="@+id/tv_quantity_of_percents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/percent_of_right_answers_u_need"
+        android:textSize="20sp"
+        android:textColor="@color/gray_pink"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score" />
+
+    <TextView
+        android:id="@+id/tv_score_percent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/ur_score_in_percent"
+        android:textSize="20sp"
+        android:textColor="@color/gray_pink"
+        app:layout_constraintTop_toBottomOf="@+id/tv_quantity_of_percents" />
+
+    <Button
+        android:id="@+id/button_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/pink"
+        android:text="@string/try_again"
+        android:backgroundTint="@color/gray_pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
