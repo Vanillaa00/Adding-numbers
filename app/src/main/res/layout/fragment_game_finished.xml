@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/ur_score"
+        android:text="@string/score"
         android:textSize="20sp"
         android:textColor="@color/gray_pink"
         app:layout_constraintTop_toBottomOf="@+id/tv_quantity_of_right_answers" />
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/ur_score_in_percent"
+        android:text="@string/score_in_percent"
         android:textSize="20sp"
         android:textColor="@color/gray_pink"
         app:layout_constraintTop_toBottomOf="@+id/tv_quantity_of_percents" />
