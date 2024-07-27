@@ -35,6 +35,11 @@ class GameFinishedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        onBackPressed()
+        bindViews(gameResult)
+    }
+
+    private fun onBackPressed() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 tryAgain()
@@ -59,6 +64,47 @@ class GameFinishedFragment : Fragment() {
             GameFragment.NAME,
             FragmentManager.POP_BACK_STACK_INCLUSIVE
         )
+    }
+
+    private fun bindViews(gameResult: GameResult) {
+        with(binding) {
+            buttonTryAgain.setOnClickListener {
+                tryAgain()
+            }
+            emojiResult.setImageResource(getSmileResId())
+            tvQuantityOfRightAnswers.text = String.format(
+                getString(R.string.quantity_of_answers_u_need),
+                gameResult.gameSettings.minCountOfRightAnswers.toString()
+            )
+            tvScore.text = String.format(
+                getString(R.string.score),
+                gameResult.countOfRightAnswers.toString()
+            )
+            tvQuantityOfPercents.text = String.format(
+                getString(R.string.percent_of_right_answers_u_need),
+                gameResult.gameSettings.minPercentOfRightAnswers.toString()
+            )
+            tvScorePercent.text = String.format(
+                getString(R.string.score_in_percent),
+                getPercentOfRightAnswers().toString()
+            )
+        }
+    }
+
+    private fun getPercentOfRightAnswers() = with(gameResult){
+        if (countOfRightAnswers == 0) {
+            0
+        } else {
+            ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
+        }
+    }
+
+    private fun getSmileResId(): Int {
+        return if (gameResult.winner) {
+            R.drawable.ic_smile
+        } else {
+            R.drawable.ic_sad
+        }
     }
 
     companion object {
